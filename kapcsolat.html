@@ -15,15 +15,16 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font-family:var(--f);font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:26px 52px;display:flex;align-items:center;justify-content:space-between;transition:padding .4s,background .4s,box-shadow .4s}
-nav.scrolled{padding:14px 52px;background:rgba(246,241,235,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--ln)}
+nav.scrolled{padding:14px 52px;background:rgba(95,72,49,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 18px rgba(42,32,24,.18)}
 .nav-logo{text-decoration:none;display:flex;align-items:center}
 .logo-img{height:56px;width:auto;display:block}
-.footer-logo .logo-img{height:40px}
+.footer-logo .logo-img{height:40px;filter:none!important}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
-.nav-links a{font-size:13px;font-weight:500;color:var(--mu);text-decoration:none;padding:8px 14px;border-radius:100px;transition:color .2s,background .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--tx);background:var(--bg2)}
-.nav-cta{background:var(--tx)!important;color:var(--bg)!important;font-weight:600!important}
-.nav-cta:hover{background:var(--ac)!important}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.78);text-decoration:none;padding:8px 14px;border-radius:100px;transition:color .2s,background .2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.nav-links a.active{color:#fff;background:rgba(255,255,255,.16)}
+.nav-cta{background:#fff!important;color:var(--tx)!important;font-weight:600!important}
+.nav-cta:hover{background:var(--bg2)!important;color:var(--tx)!important}
 .s-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:14px}
 .s-h2{font-family:var(--f);font-weight:800;font-size:clamp(32px,3.8vw,52px);line-height:1.1;letter-spacing:-.03em}
 /* LAYOUT */
@@ -84,7 +85,7 @@ footer{padding:36px 52px;border-top:1px solid var(--ln);background:var(--bg2);di
   nav{padding:18px 24px}nav.scrolled{padding:12px 24px}.nav-links{display:none}
   .kapcsolat-wrap{grid-template-columns:1fr;padding:120px 24px 72px;gap:52px}
   .fg-row{grid-template-columns:1fr}
-  footer{padding:24px}.footer-nav{display:none}
+  footer{padding:24px}
 }
 </style>
 </head>
@@ -202,9 +203,8 @@ footer{padding:36px 52px;border-top:1px solid var(--ln);background:var(--bg2);di
   <ul class="footer-nav">
     <li><a href="index.html#munkak">Munkáim</a></li>
     <li><a href="index.html#rolam">Rólam</a></li>
-    <li><a href="kapcsolat.html">Kapcsolat</a></li>
-    <li><a href="https://www.facebook.com/WOODOMA" target="_blank">Facebook</a></li>
-    <li><a href="https://www.instagram.com/woodomaoriginal/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.facebook.com/WOODOMA" target="_blank" rel="noopener">Facebook</a></li>
+    <li><a href="https://www.instagram.com/woodomaoriginal/" target="_blank" rel="noopener">Instagram</a></li>
   </ul>
   <span class="footer-copy">© 2026 Woodoma · Göd</span>
 </footer>
