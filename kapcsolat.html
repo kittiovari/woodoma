@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapcsolat — WOODOMA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="woodoma.css">
+<style>
+:root{--bg:#F6F1EB;--bg2:#EDE8E0;--bg3:#E4DDD4;--tx:#2A2018;--mu:rgba(42,32,24,.55);--di:rgba(42,32,24,.28);--ac:#7A5C3E;--acs:rgba(122,92,62,.1);--ln:rgba(42,32,24,.1);--f:'Plus Jakarta Sans',system-ui,sans-serif;--r:14px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:26px 52px;display:flex;align-items:center;justify-content:space-between;transition:padding .4s,background .4s,box-shadow .4s}
+nav.scrolled{padding:14px 52px;background:rgba(246,241,235,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--ln)}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.logo-img{height:56px;width:auto;display:block}
+.footer-logo .logo-img{height:40px}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--mu);text-decoration:none;padding:8px 14px;border-radius:100px;transition:color .2s,background .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--tx);background:var(--bg2)}
+.nav-cta{background:var(--tx)!important;color:var(--bg)!important;font-weight:600!important}
+.nav-cta:hover{background:var(--ac)!important}
+.s-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:14px}
+.s-h2{font-family:var(--f);font-weight:800;font-size:clamp(32px,3.8vw,52px);line-height:1.1;letter-spacing:-.03em}
+/* LAYOUT */
+.kapcsolat-wrap{padding:148px 52px 100px;display:grid;grid-template-columns:1.1fr .9fr;gap:96px;align-items:start}
+/* FORM */
+.form-head{margin-bottom:48px}
+.fg{margin-bottom:24px}
+.fg label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:8px}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--bg2);border:1.5px solid transparent;border-radius:10px;padding:13px 16px;font-size:15px;font-weight:400;color:var(--tx);font-family:var(--f);outline:none;-webkit-appearance:none;transition:border-color .25s,background .25s}
+.fg select{cursor:pointer}
+.fg select option{background:var(--bg2);color:var(--tx)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--ac);background:var(--bg)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--di)}
+.fg textarea{resize:none;height:88px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{width:100%;padding:15px;background:var(--tx);border:none;border-radius:100px;color:var(--bg);font-family:var(--f);font-size:14px;font-weight:600;cursor:pointer;margin-top:8px;transition:background .25s}
+.form-submit:hover{background:var(--ac)}
+/* INFO */
+.k-info{display:flex;flex-direction:column;padding-top:20px}
+.k-block{padding:26px 0;border-top:1px solid var(--ln)}
+.k-lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:8px}
+.k-val{font-family:var(--f);font-size:21px;font-weight:700;color:var(--tx)}
+.k-val a{text-decoration:none;color:inherit;transition:color .2s}
+.k-val a:hover{color:var(--ac)}
+.k-sub{font-size:13px;color:var(--mu);margin-top:4px}
+.k-cap{display:inline-block;margin-top:12px;padding:6px 14px;background:var(--acs);border-radius:100px;font-size:12px;font-weight:600;color:var(--ac)}
+.k-note{font-size:13px;color:var(--mu);line-height:1.65;margin-top:8px}
+/* FAQ */
+.faq-item{border-top:1px solid var(--ln)}
+.faq-q{width:100%;background:none;border:none;padding:18px 0;text-align:left;display:flex;justify-content:space-between;align-items:center;font-family:var(--f);font-size:14px;font-weight:600;color:var(--tx);cursor:pointer;gap:16px}
+.faq-q span{font-size:18px;color:var(--mu);transition:transform .3s;flex-shrink:0}
+.faq-q.open span{transform:rotate(45deg)}
+.faq-a{font-size:14px;color:var(--mu);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-a.open{max-height:200px;padding-bottom:18px}
+footer{padding:36px 52px;border-top:1px solid var(--ln);background:var(--bg2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:var(--f);font-weight:800;font-size:14px;letter-spacing:.04em;color:var(--mu);text-decoration:none}
+.footer-nav{display:flex;gap:4px;list-style:none}
+.footer-nav a{font-size:13px;font-weight:500;color:var(--di);text-decoration:none;padding:6px 12px;border-radius:100px;transition:color .2s,background .2s}
+.footer-nav a:hover{color:var(--mu);background:var(--bg3)}
+.footer-copy{font-size:12px;color:var(--di)}
+.fi{opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease}
+.fi.vis{opacity:1;transform:none}
+.fi-d1{transition-delay:.12s}
+/* custom select */
+.csel{position:relative;width:100%}
+.csel select{display:none}
+.csel-trigger{width:100%;background:var(--bg2);border:1.5px solid transparent;border-radius:10px;padding:13px 16px;font-size:15px;font-weight:400;color:var(--tx);font-family:var(--f);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;transition:border-color .25s,background .25s;user-select:none}
+.csel-trigger.placeholder{color:var(--di)}
+.csel-trigger.open{border-color:var(--ac);background:var(--bg)}
+.csel-arrow{flex-shrink:0;width:16px;height:16px;display:flex;align-items:center;justify-content:center;transition:transform .2s;color:var(--mu)}
+.csel-trigger.open .csel-arrow{transform:rotate(180deg)}
+.csel-drop{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--bg);border:1.5px solid var(--ac);border-radius:10px;overflow:hidden;z-index:100;box-shadow:0 8px 24px rgba(42,32,24,.12);display:none}
+.csel-drop.open{display:block}
+.csel-opt{padding:12px 16px;font-size:15px;font-weight:400;color:var(--tx);font-family:var(--f);cursor:pointer;transition:background .15s,color .15s}
+.csel-opt:hover{background:var(--acs);color:var(--ac)}
+.csel-opt.selected{background:var(--ac);color:#fff}
+@media(max-width:900px){
+  nav{padding:18px 24px}nav.scrolled{padding:12px 24px}.nav-links{display:none}
+  .kapcsolat-wrap{grid-template-columns:1fr;padding:120px 24px 72px;gap:52px}
+  .fg-row{grid-template-columns:1fr}
+  footer{padding:24px}.footer-nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="images/logo/logo_h.png" alt="Woodoma" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#munkak">Munkáim</a></li>
+    <li><a href="index.html#rolam">Rólam</a></li>
+    <li><a href="kapcsolat.html" class="active nav-cta">Kapcsolat</a></li>
+  </ul>
+</nav>
+
+<div class="kapcsolat-wrap">
+
+  <!-- FORM -->
+  <div class="fi">
+    <div class="form-head">
+      <p class="s-label">Beszéljünk</p>
+      <h1 class="s-h2" style="font-size:clamp(36px,4vw,54px);margin-bottom:16px;">Küldhetsz<br>pár képet is.</h1>
+      <p style="font-size:15px;color:var(--mu);line-height:1.7;">Egy fotó, Pinterest kép vagy voice message is elég lehet a kezdéshez.</p>
+    </div>
+
+    <!-- Messenger first block -->
+    <div class="msg-hero">
+      <div>
+        <h2>Beszéljünk Messengeren.</h2>
+        <p>Ahogy kényelmes — küldhetsz képet, hangüzenetet vagy csak leírod, mi nem működik most.</p>
+      </div>
+      <a class="msg-hero-btn" data-msg="kepkuldes">Küldök pár képet →</a>
+    </div>
+
+    <div class="msg-hero-divider">Vagy írj e-mailben</div>
+
+    <form action="https://formsubmit.co/burgerdomma@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Új érdeklődő — Woodoma">
+      <input type="hidden" name="_next" value="koszonjuk.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="fg-row">
+        <div class="fg">
+          <label for="nev">Neved</label>
+          <input type="text" id="nev" name="nev" placeholder="Kovács Anna" required>
+        </div>
+        <div class="fg">
+          <label for="kapcs">Email vagy telefon</label>
+          <input type="text" id="kapcs" name="kapcs" placeholder="anna@email.hu vagy +36 30 …" required>
+        </div>
+      </div>
+      <div class="fg">
+        <label for="uzenet">Üzenet</label>
+        <textarea id="uzenet" name="uzenet" placeholder="Pár szó arról, miben gondolkodsz…"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Elküldöm →</button>
+    </form>
+  </div>
+
+  <!-- ELÉRHETŐSÉGEK -->
+  <div class="k-info fi fi-d1">
+    <div class="k-block">
+      <p class="k-lbl">Email</p>
+      <p class="k-val">burgerdomma@gmail.com</p>
+      <p class="k-sub">Általában 24 órán belül válaszolok</p>
+    </div>
+    <div class="k-block">
+      <p class="k-lbl">Telefon</p>
+      <p class="k-val">+36 30 123 4567</p>
+      <p class="k-sub">Hétfő – Péntek, 8:00 – 17:00</p>
+    </div>
+    <div class="k-block">
+      <p class="k-lbl">Facebook</p>
+      <p class="k-val"><a href="https://www.facebook.com/WOODOMA" target="_blank">facebook.com/WOODOMA</a></p>
+      <p class="k-sub">Üzenet vagy komment is működik</p>
+    </div>
+    <div class="k-block">
+      <p class="k-lbl">Instagram</p>
+      <p class="k-val"><a href="https://www.instagram.com/woodomaoriginal/" target="_blank">@woodomaoriginal</a></p>
+      <p class="k-sub">Reels és munkafotók</p>
+    </div>
+    <div class="k-block">
+      <p class="k-lbl">Jelenlegi kapacitás</p>
+      <p class="k-val" style="font-size:18px;color:var(--mu);">~6-8 hét várólista</p>
+      <span class="k-cap">Érdemes időben foglalni</span>
+      <p class="k-note">Kiszállás: Budapest és 30 km-es körzet. Helyszíni felmérés 15 000 Ft, ami levonódik a megrendelésből.</p>
+    </div>
+
+    <div class="k-block" style="padding-bottom:0;">
+      <p class="k-lbl">Gyakori kérdések</p>
+    </div>
+    <div>
+      <div class="faq-item">
+        <button class="faq-q">Mennyibe kerül a helyszíni felmérés?<span>+</span></button>
+        <div class="faq-a">15 000 Ft-ba kerül, de teljes egészében levonódik a megrendelés összegéből. Ha mégsem rendelsz, ezt fizeted.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Mennyi idő alatt készül el a bútor?<span>+</span></button>
+        <div class="faq-a">A felmérés és beépítés között jellemzően 6-8 hét telik el. Sürgős munkát nem vállalok — inkább csináljuk rendesen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Hogyan zajlik a fizetés?<span>+</span></button>
+        <div class="faq-a">50% előleg a gyártás indításakor, 50% az átadáskor. Átutalással vagy készpénzzel.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Van garancia a munkára?<span>+</span></button>
+        <div class="faq-a">2 év szerkezeti garancia és 1 év vasalat garancia. Az első 6 hónapban ingyenesen visszamegyek beállítani, ha szükséges.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo"><img src="images/logo/logo_h.png" alt="Woodoma" class="logo-img"></a>
+  <ul class="footer-nav">
+    <li><a href="index.html#munkak">Munkáim</a></li>
+    <li><a href="index.html#rolam">Rólam</a></li>
+    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+    <li><a href="https://www.facebook.com/WOODOMA" target="_blank">Facebook</a></li>
+    <li><a href="https://www.instagram.com/woodomaoriginal/" target="_blank">Instagram</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Woodoma · Göd</span>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const a = btn.nextElementSibling, open = a.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+      document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+      if(!open){ a.classList.add('open'); btn.classList.add('open'); }
+    });
+  });
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)} }), {threshold:.08});
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+  // custom select
+  document.querySelectorAll('.fg select').forEach(sel => {
+    const fg = sel.parentElement;
+    const wrap = document.createElement('div');
+    wrap.className = 'csel';
+    fg.insertBefore(wrap, sel);
+    wrap.appendChild(sel);
+
+    const opts = Array.from(sel.options).filter(o => !o.disabled);
+    const placeholder = sel.querySelector('option[disabled]')?.text || '';
+
+    const trigger = document.createElement('div');
+    trigger.className = 'csel-trigger placeholder';
+    trigger.innerHTML = `<span>${placeholder}</span><svg class="csel-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>`;
+    wrap.insertBefore(trigger, sel);
+
+    const drop = document.createElement('div');
+    drop.className = 'csel-drop';
+    opts.forEach(o => {
+      const item = document.createElement('div');
+      item.className = 'csel-opt';
+      item.textContent = o.text;
+      item.dataset.value = o.value || o.text;
+      drop.appendChild(item);
+    });
+    wrap.appendChild(drop);
+
+    trigger.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = drop.classList.contains('open');
+      document.querySelectorAll('.csel-drop.open').forEach(d => { d.classList.remove('open'); d.previousElementSibling.classList.remove('open'); });
+      if (!isOpen) { drop.classList.add('open'); trigger.classList.add('open'); }
+    });
+
+    drop.querySelectorAll('.csel-opt').forEach(item => {
+      item.addEventListener('click', () => {
+        drop.querySelectorAll('.csel-opt').forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
+        trigger.querySelector('span').textContent = item.textContent;
+        trigger.classList.remove('placeholder', 'open');
+        drop.classList.remove('open');
+        const match = Array.from(sel.options).find(o => (o.value || o.text) === item.dataset.value);
+        if (match) { sel.value = match.value || match.text; sel.dispatchEvent(new Event('change')); }
+      });
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.csel-drop.open').forEach(d => { d.classList.remove('open'); d.previousElementSibling.classList.remove('open'); });
+  });
+</script>
+<script src="messenger.js" defer></script>
+</body>
+</html>
