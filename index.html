@@ -112,6 +112,8 @@ nav.scrolled .logo-img { height: 44px; }
 .gallery {
   display: flex; flex-wrap: wrap; gap: 6px;
   padding: 0 32px;
+  background: transparent;   /* a zóna színe látsszon át */
+  column-count: initial;     /* woodoma.css column-count felülírása */
 }
 .gallery .t {
   height: 240px;
@@ -162,12 +164,13 @@ nav.scrolled .logo-img { height: 44px; }
   border-bottom: none;
 }
 .rolam-split {
+  border-bottom: none;
   display: grid; grid-template-columns: 1fr 1.1fr;
   min-height: 640px;
 }
 .rolam-img-col { overflow: hidden; background: #1F3A1F; }
 .rolam-img { width: 100%; height: 100%; min-height: 520px; display: block; object-fit: cover; object-position: center top; }
-.rolam-text-col { padding: 132px 72px 96px; display: flex; flex-direction: column; justify-content: center; }
+.rolam-text-col { padding: 132px 72px 96px; display: flex; flex-direction: column; justify-content: center; background: transparent; }
 .rolam-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 18px; }
 .rolam-h { font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; line-height: 1.08; letter-spacing: -.034em; margin-bottom: 30px; color: #fff; }
 .rolam-p { font-size: 16px; color: rgba(255,255,255,.78); line-height: 1.8; }
