@@ -23,8 +23,9 @@
 /* BASE */
 :root {
   --bg: #F6F1EB; --bg2: #EDE8E0; --bg3: #E4DDD4;
-  --tx: #2A2018; --mu: rgba(42,32,24,.55); --di: rgba(42,32,24,.28);
-  --ac: #7A5C3E; --ln: rgba(42,32,24,.09);
+  --tx: #1F2E1F; --mu: rgba(31,46,31,.6); --di: rgba(31,46,31,.32);
+  --ac: #7A5C3E; --ln: rgba(31,46,31,.1);
+  --rolam-bg: #2B4A2B; --world2-bg: #EDE8E0; --world3-bg: #E8EEE8;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -156,21 +157,27 @@ nav.scrolled .logo-img { height: 44px; }
 
 /* RÓLAM SECTION */
 .rolam {
-  background: var(--bg2);
-  border-top: 1px solid var(--ln);
-  border-bottom: 1px solid var(--ln);
+  background: var(--rolam-bg);
+  border-top: none;
+  border-bottom: none;
 }
 .rolam-split {
   display: grid; grid-template-columns: 1fr 1.1fr;
   min-height: 640px;
 }
-.rolam-img-col { overflow: hidden; background: var(--bg3); }
+.rolam-img-col { overflow: hidden; background: #1F3A1F; }
 .rolam-img { width: 100%; height: 100%; min-height: 520px; display: block; object-fit: cover; object-position: center top; }
 .rolam-text-col { padding: 132px 72px 96px; display: flex; flex-direction: column; justify-content: center; }
-.rolam-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--ac); margin-bottom: 18px; }
-.rolam-h { font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; line-height: 1.08; letter-spacing: -.034em; margin-bottom: 30px; }
-.rolam-p { font-size: 16px; color: var(--mu); line-height: 1.8; }
+.rolam-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 18px; }
+.rolam-h { font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; line-height: 1.08; letter-spacing: -.034em; margin-bottom: 30px; color: #fff; }
+.rolam-p { font-size: 16px; color: rgba(255,255,255,.78); line-height: 1.8; }
 .rolam-p + .rolam-p { margin-top: 16px; }
+
+/* MUNKÁIM — szekció-határok */
+#munkak > .world:nth-child(3) { background: var(--world2-bg); }
+#munkak > .world:nth-child(3) .sec-foot { background: var(--world2-bg); }
+#munkak > .world:nth-child(5) { background: var(--world3-bg); }
+#munkak > .world:nth-child(5) .sec-foot { background: var(--world3-bg); }
 
 /* VALUES */
 .values { padding: 96px 56px 112px; }

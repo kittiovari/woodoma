@@ -4,13 +4,13 @@
   --bg:          #F6F1EB;
   --bg-2:        #EDE8E0;
   --bg-3:        #E4DDD4;
-  --text:        #2A2018;
-  --muted:       rgba(42,32,24,.55);
-  --dim:         rgba(42,32,24,.28);
+  --text:        #1F2E1F;
+  --muted:       rgba(31,46,31,.6);
+  --dim:         rgba(31,46,31,.32);
   --accent:      #7A5C3E;
   --accent-soft: rgba(122,92,62,.1);
   --green:       #697A65;
-  --line:        rgba(42,32,24,.1);
+  --line:        rgba(31,46,31,.1);
   --hf: 'Plus Jakarta Sans', sans-serif;
   --bf: 'Plus Jakarta Sans', sans-serif;
   --r: 14px;
