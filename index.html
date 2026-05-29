@@ -174,10 +174,17 @@ nav.scrolled .logo-img { height: 44px; }
 .rolam-p + .rolam-p { margin-top: 16px; }
 
 /* MUNKÁIM — szekció-határok */
+/* Folyamatos színzónák jelölik a szekció-határokat — az átvezető
+   statement és az alatta lévő galéria egy egybefüggő színblokk */
+#munkak > .w-stmt:nth-child(2),
 #munkak > .world:nth-child(3) { background: var(--world2-bg); }
-#munkak > .world:nth-child(3) .sec-foot { background: var(--world2-bg); }
+#munkak > .w-stmt:nth-child(4),
 #munkak > .world:nth-child(5) { background: var(--world3-bg); }
-#munkak > .world:nth-child(5) .sec-foot { background: var(--world3-bg); }
+/* Hajszálvonal nyitja az új zónát + a statement a szekció felvezetője */
+#munkak > .w-stmt:nth-child(2),
+#munkak > .w-stmt:nth-child(4) { border-top: 1px solid var(--ln); padding-bottom: 8px; }
+/* Az utolsó (színes) világ alsó levegője a trust-block előtt */
+#munkak > .world:last-of-type { padding-bottom: 88px; }
 
 /* VALUES */
 .values { padding: 96px 56px 112px; }
