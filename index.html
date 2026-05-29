@@ -64,7 +64,7 @@ nav.scrolled .logo-img { height: 44px; }
     linear-gradient(to bottom, rgba(0,0,0,.18) 0%, transparent 22%);
 }
 .hero-text { position: absolute; bottom: 76px; left: 56px; z-index: 2; color: #fff; }
-.hero-eyebrow { display: block; font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+.hero-eyebrow { display: block; font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.82); margin-bottom: 14px; }
 .hero-h1 { font-size: clamp(68px, 10.5vw, 134px); font-weight: 800; line-height: 1.04; letter-spacing: -.045em; color: #fff; margin-bottom: 36px; }
 .hero-scroll { position: absolute; bottom: 38px; right: 56px; z-index: 2; font-size: 9px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.32); writing-mode: vertical-rl; }
 
@@ -279,8 +279,9 @@ footer { padding: 32px 56px; border-top: 1px solid var(--ln); background: var(--
 }
 .lb-header {
   position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  max-width: calc(100vw - 140px);
+  display: flex; flex-direction: row; align-items: center; gap: 8px;
+  flex-wrap: wrap; justify-content: center;
+  width: max-content; max-width: calc(100vw - 140px);
   z-index: 2;
 }
 .lb-section {
@@ -404,7 +405,6 @@ footer { padding: 32px 56px; border-top: 1px solid var(--ln); background: var(--
   <!-- VILÁG 1 — NAGYOBB BÚTOROK / BEÉPÍTETT MEGOLDÁSOK -->
   <div class="world">
     <div class="sec-head">
-      <span class="sec-label">Nagyobb bútorok</span>
       <h2 class="sec-h">Beépített megoldások.</h2>
       <p class="sec-lead">Nem kész elemekből dolgozom. Jól használható bútort készítek az otthonod bármelyik szegletébe.</p>
     </div>
@@ -432,7 +432,6 @@ footer { padding: 32px 56px; border-top: 1px solid var(--ln); background: var(--
   <!-- VILÁG 2 — RÉSZLETEK / KISEBB MEGOLDÁSOK -->
   <div class="world">
     <div class="sec-head">
-      <span class="sec-label">Részletek</span>
       <h2 class="sec-h">Kisebb megoldások.</h2>
       <p class="sec-lead">Nem csak nagyobb bútorokkal foglalkozom. Sokszor egy-egy kisebb, de kreatív ötlet teszi igazán élhetővé a teret.</p>
     </div>
@@ -459,7 +458,6 @@ footer { padding: 32px 56px; border-top: 1px solid var(--ln); background: var(--
   <!-- VILÁG 3 — JÁTÉKOK & KISEBB TÁRGYAK -->
   <div class="world">
     <div class="sec-head">
-      <span class="sec-label">Játékok és tárgyak</span>
       <h2 class="sec-h">Játékok és otthoni tárgyak.</h2>
       <p class="sec-lead">Olyan kreatív apróságok, amikkel jó játszani, amiket jó használni.</p>
     </div>
@@ -520,7 +518,7 @@ footer { padding: 32px 56px; border-top: 1px solid var(--ln); background: var(--
       <h2 class="rolam-h">Amit jó<br>használni.</h2>
       <p class="rolam-p">Domi vagyok, asztalos.</p>
       <p class="rolam-p">Szeretem, amikor egy ötletből végül valami valódi lesz.</p>
-      <p class="rolam-p">Minden munkát én viszek végig a felméréstől a beépítésig. Gödön dolgozom, Budapest egész területén vállalok munkát.</p>
+      <p class="rolam-p">Minden munkát én viszek végig a felméréstől a beépítésig. Gödön dolgozom, a Dunakanyar és Budapest egész területén vállalok munkát.</p>
     </div>
   </div>
 
@@ -607,7 +605,7 @@ footer { padding: 32px 56px; border-top: 1px solid var(--ln); background: var(--
     // Build per-section trigger lists
     const sections = Array.from(document.querySelectorAll('#munkak .world')).map(world => ({
       title: world.querySelector('.sec-h')?.textContent.trim() || '',
-      label: world.querySelector('.sec-label')?.textContent.trim() || '',
+      label: (world.querySelector('.sec-h')?.textContent.trim() || '').replace(/\.$/, ''),
       triggers: Array.from(world.querySelectorAll('.gallery .t, .gallery-thumbs .t'))
     })).filter(s => s.triggers.length > 0);
 
