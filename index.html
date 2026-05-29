@@ -42,7 +42,10 @@ nav {
   padding: 22px 56px;
   display: flex; align-items: center; justify-content: space-between;
   background: transparent;
-  transition: padding .4s, background .4s, box-shadow .4s;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  transition: padding .4s, background .4s, backdrop-filter .4s, box-shadow .4s;
 }
 nav.scrolled {
   padding: 12px 56px;
