@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kapcsolat — WOODOMA</title>
+<meta name="description" content="Írj Messengeren vagy emailben. Egy fotó, skicc vagy félmondat is elég a kezdéshez. Göd, Dunakanyar és Budapest.">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kittiovari.github.io/woodoma/kapcsolat.html">
+<meta property="og:title" content="Kapcsolat — WOODOMA">
+<meta property="og:description" content="Írj Messengeren vagy emailben. Egy fotó, skicc vagy félmondat is elég a kezdéshez.">
+<meta property="og:image" content="https://kittiovari.github.io/woodoma/images/furniture/14.webp">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kittiovari.github.io/woodoma/images/furniture/14.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -98,7 +108,17 @@ footer{padding:36px 52px;border-top:1px solid var(--ln);background:var(--bg2);di
     <li><a href="index.html#rolam">Rólam</a></li>
     <li><a href="kapcsolat.html" class="active nav-cta">Kapcsolat</a></li>
   </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menü megnyitása" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <ul>
+    <li><a href="index.html#munkak">Munkáim</a></li>
+    <li><a href="index.html#rolam">Rólam</a></li>
+    <li><a href="kapcsolat.html" class="mn-cta">Kapcsolat</a></li>
+  </ul>
+</div>
 
 <div class="kapcsolat-wrap">
 
@@ -154,7 +174,7 @@ footer{padding:36px 52px;border-top:1px solid var(--ln);background:var(--bg2);di
     </div>
     <div class="k-block">
       <p class="k-lbl">Telefon</p>
-      <p class="k-val">+36 30 123 4567</p>
+      <p class="k-val"><a href="tel:+36308538652">+36 30 853 86 52</a></p>
       <p class="k-sub">Hétfő – Péntek, 8:00 – 17:00</p>
     </div>
     <div class="k-block">
@@ -275,5 +295,6 @@ footer{padding:36px 52px;border-top:1px solid var(--ln);background:var(--bg2);di
   });
 </script>
 <script src="messenger.js" defer></script>
+<script src="nav.js" defer></script>
 </body>
 </html>
